@@ -1,0 +1,19 @@
+﻿namespace WorldServer.Domain.Entities
+{
+    public class GameObjectEntity
+    {
+        public long Id { get; set; }
+
+        public string Prefab { get; set; } = "";
+
+        public int ChunkX { get; set; }
+
+        public int ChunkY { get; set; }
+
+        public float LocalX { get; set; }
+
+        public float LocalY { get; set; }
+
+        public float LocalZ { get; set; }
+    }
+}
