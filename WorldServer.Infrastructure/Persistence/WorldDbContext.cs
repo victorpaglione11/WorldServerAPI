@@ -16,20 +16,10 @@ namespace WorldServer.Infrastructure.Persistence
             GameObjects =>
             Set<GameObjectEntity>();
 
-        public DbSet<MapTileEntity>
-        MapTiles =>
-        Set<MapTileEntity>();
-
 
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<MapTileEntity>()
-        .ToTable("map_tiles");
-
-            modelBuilder.Entity<MapTileEntity>()
-        .HasKey(x => x.Id);
-
             modelBuilder.Entity<GameObjectEntity>()
                 .ToTable("game_objects");
 

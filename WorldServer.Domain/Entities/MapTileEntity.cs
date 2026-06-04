@@ -11,6 +11,6 @@ namespace WorldServer.Domain.Entities
 
         public int TileY { get; set; }
 
-        public byte[] ImageData { get; set; }
+        public string ImageFilePath { get; set; }
     }
 }
