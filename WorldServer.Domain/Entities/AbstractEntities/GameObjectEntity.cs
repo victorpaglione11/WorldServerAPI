@@ -1,4 +1,4 @@
-﻿namespace WorldServer.Domain.Entities
+﻿namespace WorldServer.Domain.Entities.AbstractEntities
 {
     public class GameObjectEntity
     {

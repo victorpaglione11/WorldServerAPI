@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WorldServer.Application.Services;
 
 namespace WorldServer.Application
 {
@@ -9,7 +8,7 @@ namespace WorldServer.Application
             AddApplication(
                 this IServiceCollection services)
         {
-            services.AddScoped<ObjectService>();
+            //services.AddScoped<ObjectService>();
 
             return services;
         }

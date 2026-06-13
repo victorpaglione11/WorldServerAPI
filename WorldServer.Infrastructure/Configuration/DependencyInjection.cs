@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WorldServer.Domain.Interfaces;
 using WorldServer.Infrastructure.Persistence;
-using WorldServer.Infrastructure.Repositories;
 
 namespace WorldServer.Infrastructure.Configuration
 {
@@ -23,11 +21,6 @@ namespace WorldServer.Infrastructure.Configuration
                     )
                 )
             );
-
-            services.AddScoped<
-                IObjectRepository,
-                ObjectRepository>();
-
 
             return services;
         }

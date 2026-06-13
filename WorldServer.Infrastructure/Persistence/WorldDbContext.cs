@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WorldServer.Domain.Entities;
+using WorldServer.Infrastructure.Migrations;
 
 namespace WorldServer.Infrastructure.Persistence
 {
-    public class WorldDbContext
-    : DbContext
+    public class WorldDbContext : DbContext
     {
         public WorldDbContext(
             DbContextOptions<WorldDbContext> options)
@@ -12,48 +12,17 @@ namespace WorldServer.Infrastructure.Persistence
         {
         }
 
-        public DbSet<GameObjectEntity>
-            GameObjects =>
-            Set<GameObjectEntity>();
+        public DbSet<EntityRace> Races => Set<EntityRace>();
+        public DbSet<PlayerEntity> Players => Set<PlayerEntity>();
+        public DbSet<EntityTitle> Titles => Set<EntityTitle>();
+        public DbSet<PlayerTitle> PlayersTitles => Set<PlayerTitle>();
 
-
-        protected override void OnModelCreating(
-            ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<GameObjectEntity>()
-                .ToTable("game_objects");
+            base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<GameObjectEntity>()
-                .HasKey(x => x.Id);
-
-            modelBuilder.Entity<GameObjectEntity>()
-                .Property(x => x.Id)
-                .HasColumnName("id");
-
-            modelBuilder.Entity<GameObjectEntity>()
-                .Property(x => x.Prefab)
-                .HasColumnName("prefab");
-
-            modelBuilder.Entity<GameObjectEntity>()
-                .Property(x => x.ChunkX)
-                .HasColumnName("chunk_x");
-
-            modelBuilder.Entity<GameObjectEntity>()
-                .Property(x => x.ChunkY)
-                .HasColumnName("chunk_y");
-
-            modelBuilder.Entity<GameObjectEntity>()
-                .Property(x => x.LocalX)
-                .HasColumnName("local_x");
-
-            modelBuilder.Entity<GameObjectEntity>()
-                .Property(x => x.LocalY)
-                .HasColumnName("local_y");
-
-            modelBuilder.Entity<GameObjectEntity>()
-                .Property(x => x.LocalZ)
-                .HasColumnName("local_z");
+            modelBuilder.ApplyConfigurationsFromAssembly(
+                typeof(WorldDbContext).Assembly);
         }
     }
 }
-

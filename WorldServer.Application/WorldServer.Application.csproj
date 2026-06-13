@@ -12,8 +12,10 @@
 
   <ItemGroup>
     <Folder Include="Authentication\" />
+    <Folder Include="DTOs\" />
     <Folder Include="Players\" />
     <Folder Include="Objects\" />
+    <Folder Include="Services\" />
     <Folder Include="World\" />
   </ItemGroup>
 
