@@ -2,7 +2,7 @@
 {
     public class GameObjectEntity
     {
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Prefab { get; set; } = "";
 

@@ -2,7 +2,7 @@
 
 namespace WorldServer.Domain.Entities
 {
-    public class PlayerEntity : BaseLivingEntity
+    public class Player : BaseLivingEntity
     {
         public Guid? ActiveTitleId { get; set; }
     }

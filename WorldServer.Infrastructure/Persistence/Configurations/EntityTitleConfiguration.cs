@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace WorldServer.Infrastructure.Persistence.Configurations
 {
     public class EntityTitleConfiguration
-        : IEntityTypeConfiguration<EntityTitle>
+        : IEntityTypeConfiguration<Title>
     {
-        public void Configure(EntityTypeBuilder<EntityTitle> builder)
+        public void Configure(EntityTypeBuilder<Title> builder)
         {
             builder.ToTable("titles");
 
@@ -19,7 +19,7 @@ namespace WorldServer.Infrastructure.Persistence.Configurations
             builder.HasIndex(x => x.Code)
                 .IsUnique();
 
-            builder.Property(x => x.Title)
+            builder.Property(x => x.TitleName)
                 .IsRequired()
                 .HasMaxLength(100);
 

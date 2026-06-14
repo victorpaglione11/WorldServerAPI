@@ -20,12 +20,12 @@ namespace WorldServer.Infrastructure.Persistence.Configurations
             builder.Property(x => x.AchievedAt)
                 .IsRequired();
 
-            builder.HasOne<PlayerEntity>()
+            builder.HasOne<Player>()
                 .WithMany()
                 .HasForeignKey(x => x.PlayerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasOne<EntityTitle>()
+            builder.HasOne<Title>()
                 .WithMany()
                 .HasForeignKey(x => x.TitleId)
                 .OnDelete(DeleteBehavior.Cascade);

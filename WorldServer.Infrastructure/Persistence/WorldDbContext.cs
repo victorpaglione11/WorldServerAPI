@@ -13,8 +13,8 @@ namespace WorldServer.Infrastructure.Persistence
         }
 
         public DbSet<EntityRace> Races => Set<EntityRace>();
-        public DbSet<PlayerEntity> Players => Set<PlayerEntity>();
-        public DbSet<EntityTitle> Titles => Set<EntityTitle>();
+        public DbSet<Player> Players => Set<Player>();
+        public DbSet<Title> Titles => Set<Title>();
         public DbSet<PlayerTitle> PlayersTitles => Set<PlayerTitle>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -6,9 +6,9 @@ using WorldServer.Infrastructure.Persistence.Extensions;
 namespace WorldServer.Infrastructure.Persistence.Configurations
 {
     public class PlayerEntityConfiguration
-        : IEntityTypeConfiguration<PlayerEntity>
+        : IEntityTypeConfiguration<Player>
     {
-        public void Configure(EntityTypeBuilder<PlayerEntity> builder)
+        public void Configure(EntityTypeBuilder<Player> builder)
         {
             builder.ToTable("players");
 
@@ -16,12 +16,12 @@ namespace WorldServer.Infrastructure.Persistence.Configurations
 
             builder.ConfigureBaseLivingEntity();
 
-            builder.HasOne<EntityTitle>()
+            builder.HasOne<Title>()
                 .WithMany()
                 .HasForeignKey(x => x.ActiveTitleId)
                 .OnDelete(DeleteBehavior.SetNull);
 
-            builder.HasOne<EntityTitle>()
+            builder.HasOne<Title>()
                 .WithMany()
                 .HasForeignKey(x => x.ActiveTitleId);
         }
