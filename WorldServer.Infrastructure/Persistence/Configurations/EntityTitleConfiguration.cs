@@ -30,7 +30,7 @@ namespace WorldServer.Infrastructure.Persistence.Configurations
             builder.Property(x => x.Rank)
                 .IsRequired();
 
-            builder.Property(x => x.Modifiers)
+            builder.Property(x => x.StatusEffectIds)
                 .HasColumnType("jsonb");
         }
     }

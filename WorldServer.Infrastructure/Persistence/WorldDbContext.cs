@@ -16,6 +16,8 @@ namespace WorldServer.Infrastructure.Persistence
         public DbSet<Player> Players => Set<Player>();
         public DbSet<Title> Titles => Set<Title>();
         public DbSet<PlayerTitle> PlayersTitles => Set<PlayerTitle>();
+        public DbSet<StatusEffect> StatusEffects => Set<StatusEffect>();
+        public DbSet<ActiveEffect> ActiveEffects => Set<ActiveEffect>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

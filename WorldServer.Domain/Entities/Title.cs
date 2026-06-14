@@ -12,5 +12,5 @@ public class Title
 
     public Rank Rank { get; set; }
 
-    public Guid StatusEffectId { get; set; }
+    public Guid StatusEffectIds { get; set; }
 }
